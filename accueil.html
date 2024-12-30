@@ -13,39 +13,42 @@
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Machine Virtuelle</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="accueil.html">Machine Virtuelle</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                    <a class="nav-link active hover-active" aria-current="page" href="accueil.html">Accueil</a>
                 </li>
 
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="installation.html" id="navbarDropdownMenuLink1"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Installation
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item text-light" href="#">Action</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Another action</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item text-light" href="installation.html#">Action</a></li>
+                        <li><a class="dropdown-item text-light" href="installation.html#">Another action</a></li>
+                        <li><a class="dropdown-item text-light" href="installation.html#">Something else here</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="site.html#" id="navbarDropdownMenuLink2" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
                         Site
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item text-light" href="#">Action</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Another action</a></li>
-                        <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item text-light" href="site.html#">Action</a></li>
+                        <li><a class="dropdown-item text-light" href="site.html#">Another action</a></li>
+                        <li><a class="dropdown-item text-light" href="site.html#">Something else here</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dossier</a>
+                    <a class="nav-link" href="dossier.html">Dossier</a>
                 </li>
             </ul>
         </div>
@@ -56,8 +59,10 @@
 <main>
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
+                    aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active"
+                    aria-current="true"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
@@ -68,7 +73,7 @@
                     <div class="carousel-caption text-start">
                         <h1>Comment installer une machine virtuelle ?</h1>
                         <p>VmWare, VirtualBox, Workstation, Stratus.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">En savoir plus</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="installation.html">En savoir plus</a></p>
                     </div>
                 </div>
             </div>
@@ -79,7 +84,7 @@
                     <div class="carousel-caption">
                         <h1>Qu'est ce qu'une machine virtuelle ?</h1>
                         <p>Une machine dans une machine.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">En savoir plus</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="accueil.html#questce-quune-mv">En savoir plus</a></p>
                     </div>
                 </div>
             </div>
@@ -90,7 +95,7 @@
                     <div class="carousel-caption text-end">
                         <h1>Comment déployer un Site Web ?</h1>
                         <p>Apache et WebStorm.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">En savoir plus</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="site.html">En savoir plus</a></p>
                     </div>
                 </div>
             </div>
@@ -104,15 +109,75 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+
+    <section class="container-fluid" id="video">
+        <h1 id="questce-quune-mv">Qu'est ce qu'une machine virtuelle ?</h1>
+        <hr>
+        <p>Une machine virtuelle est une machine dans une machine. Elle permet d'avoir un autre SE (système d'exploitation) que le SE de la machine hôte. Cela a plusieurs avanatge : ajouter de la sécurité en cas de données infectées, permettre une meilleure optimisation des composants de la machine... Tout cela est possible grâce à des hyperviseurs tels que VmWare, VirtualBox, Stratus... qui permettent de simuler l'utilisation des propres composants de la machine virtuelle. Cependant il existe des désavantages. Les machines virtuelles ont tendance à utiliser davantage de ressources et de mémoires ce qui peut causer des problèmes pour des machines avec des composants assez anciens. Il faut donc savoir faire la part des choses entre les avantages et les inconvénients. Pour en apprendre plus cliquez sur les vidéos ci-dessous !</p>
+        <hr>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm bg-dark">
+                    <video controls autoplay muted>
+                        <source src="assets/video/SAE103-HUYNH.mov" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle par HUYNH Océane.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light" href="https://youtu.be/OOCMGIz8whA" target="_blank">Voir</a></button>
+                            </div>
+                            <small class="text-body-secondary">2:12</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm bg-dark">
+                    <video controls autoplay muted>
+                        <source src="assets/video/SAE103-HUYNH.mov" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle par HUYNH Océane.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light" href="https://youtu.be/OOCMGIz8whA" target="_blank">Voir</a></button>
+                            </div>
+                            <small class="text-body-secondary">2:12</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-sm bg-dark">
+                    <video controls autoplay muted>
+                        <source src="assets/video/SAE103-HUYNH.mov" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle par HUYNH Océane.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light" href="https://youtu.be/OOCMGIz8whA" target="_blank">Voir</a></button>
+                            </div>
+                            <small class="text-body-secondary">2:12</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 
 <footer class="py-3 container-fluid fixed-bottom bg-dark">
     <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Accueil</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">GitHub</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Apache</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">WebStorm</a></li>
+        <li class="nav-item"><a href="accueil.html" class="nav-link px-2 text-light hover-active">Accueil</a></li>
+        <li class="nav-item"><a href="https://github.com/Cheaucapik/S103-systemes" target="blank"
+                                class="nav-link px-2 text-light hover-active">GitHub</a></li>
+        <li class="nav-item"><a href="https://httpd.apache.org/docs/2.2/fr/" target="blank"
+                                class="nav-link px-2 text-light hover-active">Apache</a></li>
+        <li class="nav-item"><a href="https://www.jetbrains.com/fr-fr/webstorm/" target="blank"
+                                class="nav-link px-2 text-light hover-active">WebStorm</a></li>
     </ul>
     <p class="text-center text-light">© 2024 Machine Virtuelle - Huynh Océane - Lux Talina - Radovic Nikola</p>
 </footer>

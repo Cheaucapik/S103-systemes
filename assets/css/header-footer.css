@@ -1,0 +1,49 @@
+body {
+    background-color: #3a3f44;
+    color: white;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.navbar-nav > li > a {
+    margin-right: 50px;
+}
+
+.dropdown-item:hover {
+    background-color: #3a3f44;
+}
+
+.dropdown-item:active {
+    background-color: #0d6efd;
+}
+
+div img{
+    opacity: 30%;
+}
+
+@media (min-width: 992px) {
+    nav {
+        height: 75px;
+    }
+
+    main {
+        margin-top: 75px;
+        margin-bottom: 145px;
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        margin-top: 56px;
+    }
+
+    .container h1{
+        font-size: 20px;
+    }
+    .container p, .container p a{
+        font-size: 10px;
+    }
+
+}

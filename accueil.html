@@ -7,7 +7,7 @@
           rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/accueil.css">
+    <link rel="stylesheet" href="assets/css/header-footer.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -22,12 +22,21 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Accueil</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Installation
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item text-light" href="#">Action</a></li>
+                        <li><a class="dropdown-item text-light" href="#">Another action</a></li>
+                        <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Site
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item text-light" href="#">Action</a></li>
@@ -36,25 +45,76 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="#">Dossier</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<main class="container-fluid">
-    <h1>Bonjour</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis odio porro veritatis? Assumenda consequuntur deleniti earum esse explicabo, ipsam libero nostrum qui reprehenderit similique, sit, sunt vitae voluptatibus. Consequuntur, qui.</p>
+
+
+<main>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="assets/img/VM.png" class="d-block w-100" alt="First Slide">
+
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Comment installer une machine virtuelle ?</h1>
+                        <p>VmWare, VirtualBox, Workstation, Stratus.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img src="assets/img/CPU.jpg" class="d-block w-100" alt="First Slide">
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Qu'est ce qu'une machine virtuelle ?</h1>
+                        <p>Une machine dans une machine.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/WebStorm.png" class="d-block w-100" alt="First Slide">
+
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>Comment déployer un Site Web ?</h1>
+                        <p>Apache et WebStorm.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">En savoir plus</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 </main>
+
+
 <footer class="py-3 container-fluid fixed-bottom bg-dark">
     <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Accueil</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">GitHub</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Apache</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-light">WebStorm</a></li>
     </ul>
-    <p class="text-center text-light">© 2024 Company, Inc</p>
+    <p class="text-center text-light">© 2024 Machine Virtuelle - Huynh Océane - Lux Talina - Radovic Nikola</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

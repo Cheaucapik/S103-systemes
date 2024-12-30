@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1f6970d6-306b-4ad8-aabc-0cb0325f554a" name="S103">
+        <fileTransfer rootFolder="/home/cheaucapik/monsite.fr" accessType="SFTP" host="192.168.1.174" port="22" sshConfigId="20e4384a-bd61-4bc4-8a92-a9cfbc1541be" sshConfig="cheaucapik@192.168.1.174:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

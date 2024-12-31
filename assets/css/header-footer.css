@@ -4,6 +4,10 @@
     --blue-hover: #0a449f;
     --hover-text: #bbbbbb;
     --text: #fff;
+    --background: #212529;
+}
+*{
+    scroll-margin-top: 100px;
 }
 
 body {
@@ -90,3 +94,16 @@ section {
     }
 
 }
+
+#diagramme-de-gantt{
+    padding: 20px;
+}
+
+th{
+    color: var(--text) !important;
+}
+
+td{
+    background-color: var(--background) !important;
+}
+

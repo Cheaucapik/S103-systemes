@@ -19,6 +19,8 @@ main{
     margin-top: 75px;
 }
 
+/* header */
+
 .navbar-collapse {
     flex-grow: 0;
 }
@@ -35,6 +37,8 @@ main{
     background-color: var(--blue);
 }
 
+/* accueil */
+
 main div img{
     opacity: 30%;
 }
@@ -43,23 +47,23 @@ main div img{
     color: var(--hover-text) !important;
 }
 
-#video p, #video small, #video button{
+.video p, .video small, .video button{
     color: var(--text) !important;
 }
 
-#video button{
+.video button{
     background-color: var(--blue);
 }
 
-#video a{
+.video a{
     text-decoration: none;
 }
 
-#video button:hover{
+.video button:hover{
     background-color: var(--blue-hover);
 }
 
-#video{
+.video{
     padding: 30px;
 }
 
@@ -69,6 +73,10 @@ hr{
 
 section {
     text-align: justify;
+}
+
+#introduction{
+    font-size: 20px;
 }
 
 @media (min-width: 992px) {
@@ -95,6 +103,23 @@ section {
 
 }
 
+/* site */
+
+#description{
+    padding: 30px;
+    font-size: 20px;
+}
+
+#intro{
+    margin: 30px 0;
+}
+
+h2{
+    padding-bottom : 20px;
+}
+
+/* dossier */
+
 #diagramme-de-gantt{
     padding: 20px;
 }
@@ -106,4 +131,3 @@ th{
 td{
     background-color: var(--background) !important;
 }
-

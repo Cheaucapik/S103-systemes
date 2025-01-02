@@ -12,49 +12,57 @@
     <title>Accueil</title>
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="accueil.html"><img src="assets/img/logo.png" alt="logo"> Machine Virtuelle</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active hover-active" aria-current="page" href="accueil.html">Accueil</a>
-                </li>
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"> Machine Virtuelle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active hover-active" aria-current="page" href="index.html">Accueil</a>
+                    </li>
 
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="installation.html" id="navbarDropdownMenuLink1"
-                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Installation
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item text-light" href="installation.html#">Action</a></li>
-                        <li><a class="dropdown-item text-light" href="installation.html#">Another action</a></li>
-                        <li><a class="dropdown-item text-light" href="installation.html#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="site.html#" id="navbarDropdownMenuLink2" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        Site
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item text-light" href="site.html#">Action</a></li>
-                        <li><a class="dropdown-item text-light" href="site.html#">Another action</a></li>
-                        <li><a class="dropdown-item text-light" href="site.html#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="dossier.html">Dossier</a>
-                </li>
-            </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="installation.html" id="navbarDropdownMenuLink1"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Installation
+                        </a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item text-light" href="installation.html#">Action</a></li>
+                            <li><a class="dropdown-item text-light" href="installation.html#">Another action</a></li>
+                            <li><a class="dropdown-item text-light" href="installation.html#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="site.html#" id="navbarDropdownMenuLink2" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            Site
+                        </a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item text-light" href="site.html#intro">Vidéo</a></li>
+                            <li><a class="dropdown-item text-light" href="site.html#adresse-ip">Adresse IP</a></li>
+                            <li><a class="dropdown-item text-light" href="site.html#ssh">Service SSH</a></li>
+                            <li><a class="dropdown-item text-light" href="site.html#apache2">Apache2</a></li>
+                            <li><a class="dropdown-item text-light" href="site.html#deplacement">Déplacement</a></li>
+                            <li><a class="dropdown-item text-light" href="site.html#webstorm&serveur-web">WebStorm &
+                                serveur web</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dossier.html">Dossier</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
 
 
 <main>
@@ -85,7 +93,7 @@
                     <div class="carousel-caption">
                         <h1>Qu'est ce qu'une machine virtuelle ?</h1>
                         <p>Une machine dans une machine.</p>
-                        <p><a class="btn btn-lg btn-primary" href="accueil.html#questce-quune-mv">En savoir plus</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="index.html#questce-quune-mv">En savoir plus</a></p>
                     </div>
                 </div>
             </div>
@@ -111,10 +119,17 @@
         </button>
     </div>
 
-    <section class="container-fluid" id="video">
+    <section class="container-fluid video">
         <h1 id="questce-quune-mv">Qu'est ce qu'une machine virtuelle ?</h1>
         <hr>
-        <p>Une machine virtuelle est une machine dans une machine. Elle permet d'avoir un autre SE (système d'exploitation) que le SE de la machine hôte. Cela a plusieurs avanatge : ajouter de la sécurité en cas de données infectées, permettre une meilleure optimisation des composants de la machine... Tout cela est possible grâce à des hyperviseurs tels que VmWare, VirtualBox, Stratus... qui permettent de simuler l'utilisation des propres composants de la machine virtuelle. Cependant il existe des désavantages. Les machines virtuelles ont tendance à utiliser davantage de ressources et de mémoires ce qui peut causer des problèmes pour des machines avec des composants assez anciens. Il faut donc savoir faire la part des choses entre les avantages et les inconvénients. Pour en apprendre plus cliquez sur les vidéos ci-dessous !</p>
+        <p id="introduction">Une machine virtuelle est une machine dans une machine. Elle permet d'avoir un autre SE (système
+            d'exploitation) que le SE de la machine hôte. Cela a plusieurs avanatge : ajouter de la sécurité en cas de
+            données infectées, permettre une meilleure optimisation des composants de la machine... Tout cela est
+            possible grâce à des hyperviseurs tels que VmWare, VirtualBox, Stratus... qui permettent de simuler
+            l'utilisation des propres composants de la machine virtuelle. Cependant il existe des désavantages. Les
+            machines virtuelles ont tendance à utiliser davantage de ressources et de mémoires ce qui peut causer des
+            problèmes pour des machines avec des composants assez anciens. Il faut donc savoir faire la part des choses
+            entre les avantages et les inconvénients. Pour en apprendre plus cliquez sur les vidéos ci-dessous !</p>
         <hr>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
@@ -123,10 +138,14 @@
                         <source src="assets/video/SAE103-HUYNH.mov" type="video/mp4">
                     </video>
                     <div class="card-body">
-                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle par HUYNH Océane.</p>
+                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle
+                            par HUYNH Océane.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light" href="https://youtu.be/OOCMGIz8whA" target="_blank">Voir</a></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light"
+                                                                                                  href="https://youtu.be/OOCMGIz8whA"
+                                                                                                  target="_blank">Voir</a>
+                                </button>
                             </div>
                             <small class="text-body-secondary">2:12</small>
                         </div>
@@ -139,10 +158,14 @@
                         <source src="assets/video/Presentation_VirtualMachine_LuxTalina.mp4" type="video/mp4">
                     </video>
                     <div class="card-body">
-                        <p class="card-text">Virtual Machine - Presentation. Vidéo de présentation d'une machine virtuelle par LUX Talina.</p>
+                        <p class="card-text">Virtual Machine - Presentation. Vidéo de présentation d'une machine
+                            virtuelle par LUX Talina.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light" href="https://youtu.be/NY1eOIe765Q" target="_blank">Voir</a></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light"
+                                                                                                  href="https://youtu.be/NY1eOIe765Q"
+                                                                                                  target="_blank">Voir</a>
+                                </button>
                             </div>
                             <small class="text-body-secondary">2:49</small>
                         </div>
@@ -155,10 +178,14 @@
                         <source src="assets/video/SAE103-HUYNH.mov" type="video/mp4">
                     </video>
                     <div class="card-body">
-                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle par HUYNH Océane.</p>
+                        <p class="card-text">What is a Virtual Machine ? Vidéo de présentation d'une machine virtuelle
+                            par HUYNH Océane.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light" href="https://youtu.be/OOCMGIz8whA" target="_blank">Voir</a></button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a class="text-light"
+                                                                                                  href="https://youtu.be/OOCMGIz8whA"
+                                                                                                  target="_blank">Voir</a>
+                                </button>
                             </div>
                             <small class="text-body-secondary">2:12</small>
                         </div>
@@ -172,7 +199,7 @@
 
 <footer class="py-3 container-fluid fixed-bottom bg-dark">
     <ul class="nav justify-content-center border-bottom border-secondary pb-3 mb-3">
-        <li class="nav-item"><a href="accueil.html" class="nav-link px-2 text-light hover-active">Accueil</a></li>
+        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-light hover-active">Accueil</a></li>
         <li class="nav-item"><a href="https://github.com/Cheaucapik/S103-systemes" target="blank"
                                 class="nav-link px-2 text-light hover-active">GitHub</a></li>
         <li class="nav-item"><a href="https://httpd.apache.org/docs/2.2/fr/" target="blank"

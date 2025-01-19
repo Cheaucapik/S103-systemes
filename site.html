@@ -7,7 +7,7 @@
           rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/header-footer.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/img/logo.png">
     <title>Site</title>
 </head>
@@ -99,30 +99,152 @@
             </div>
         </div>
     </section>
-    <section id="adresse-ip" class="container-fluid">
+    <section id="adresse-ip" class="container-fluid section">
         <hr>
         <h1>Adresse IP</h1>
         <hr>
+        <p class="texte">Il faut mettre sa machine virtuelle en réseau pont puisqu’elle correspond à l’adresse IP du
+            réseau domestique. Ainsi, toutes les personnes connectées à notre réseau local pourront y accéder. On
+            récupère donc l’adresse IP de notre réseau en effectuant la commande :
+            <strong class="text-color">ip -c addr</strong>.
+            On a un pavé d’informations mais la seule qui nous intéresse est la suivant :
+        </p>
+        <img src="assets/img/addrIP.png" alt="adresseIP" class="img-fluid">
+        <p class="texte">Cette dernière va varier mais commence communément par <strong
+                class="text-color">192.168.x.x</strong>.</p>
     </section>
-    <section id="ssh" class="container-fluid">
+    <section id="ssh" class="container-fluid section">
         <hr>
         <h1>Service SSH</h1>
         <hr>
+        <p class="texte">Il peut être également utile d’installer un service SSH, puisque le terminal de la machine hôte
+            est davantage pratique concernant les manipulations (on peut copier et coller). Une fois l’installation
+            terminée on exécute en tant qu'administrateur le terminal de la machine hôte et on tape la commande suivante
+            : <strong class="text-color">ssh nomutilisateur@ip</strong>. <br>
+            L’ip correspond à celle que l’on a récupérée précédemment.
+            Si tout fonctionne correctement on obtient le paragraphe suivant :
+        </p>
+        <img src="assets/img/serviceSSH.png" alt="SSH" class="img-fluid">
+        <p class="texte">S’il y a “<strong class="text-color">connection timed out</strong>”, vérifiez que le réseau est
+            bien en pont.
+            L’installation correcte du service SSH est importante dans le lien du WebStorm avec notre serveur web.
+        </p>
     </section>
-    <section id="apache2" class="container-fluid">
+    <section id="apache2" class="container-fluid section">
         <hr>
         <h1>Apache 2</h1>
         <hr>
+        <p class="texte">Nous allons utiliser le service d’apache2 pour déployer notre site. On l’installe avec la
+            commande suivante : <strong class="text-color">sudo apt install apache2</strong>.
+            En tapant l’adresse IP dans un navigateur on obtient la page apache2 suivante :
+        </p>
+        <img class="img-fluid" src="assets/img/ubuntu.jpg" alt="default-page-ubuntu">
+        <p class="texte">Cette dernière se trouve à l'emplacement <strong
+                class="text-color">/var/www/html/index.html</strong> comme indiqué. Nous n’avons pas les droits d’accès
+            pour ce chemin, nous allons donc remplacer ce chemin par un autre qui constitue notre site. </p>
     </section>
-    <section id="deplacement" class="container-fluid">
+    <section id="deplacement" class="container-fluid section">
         <hr>
         <h1>Déplacement</h1>
         <hr>
+        <p class="texte">On crée un répertoire grâce à la commande <strong class="text-color">mkdir &lt;nom répertoire&gt;</strong>.
+        </p>
+        <img class="img-fluid" src="assets/img/ls.png" alt="ls">
+        <p class="texte">Dans notre cas, il s'appelle <strong class="text-color">monsite.fr</strong>. <br> <br>
+
+            Nous allons alors changer les configurations d’apache2. En regardant de plus près les dossiers on se rend
+            compte que le fichier de configuration est <strong class="text-color">000-default.conf</strong>. On va donc
+            le modifier en utilisant la commande <strong class="text-color">sudo nano
+                /etc/apache2/sites-enabled/000-default.conf</strong> et en remplaçant le chemin qui se situe après
+            DocumentRoot par le chemin qui correspond à notre répertoire site. A chaque modification il faut redémarrer
+            apache2 : <strong class="text-color">sudo systemctl reload apache2.service</strong>.
+            <br>
+            Or il va y avoir une erreur et en regardant les logs on remarque que nous n’avons pas tous les droits. On va
+            alors encore changer les configurations : <strong class="text-color">sudo nano
+                /etc/apache2/apache2.conf</strong> et on va rajouter au bon emplacement (i.e où il y a tous les
+            directories) :
+            <br> <br>
+
+        <i class="text-color2">&lt;Directory /chemin-de-notre-site/&gt; <br>
+            &nbsp;&nbsp;&nbsp;Options Indexes FollowSymLinks <br>
+            &nbsp;&nbsp;&nbsp;AllowOverride None <br>
+            &nbsp;&nbsp;&nbsp;Require all granted <br>
+            &lt;/Directory&gt; <br> <br>
+        </i>
+
+        Comme sur cet exemple : </p>
+
+        <img class="img-fluid" src="assets/img/apache2conf.png" alt="apache2config">
+
+        <p class="texte">On redémarre apache2. <br>
+            Il y a toujours un problème de permissions puisque le service apache ne peut pas rentrer dans le répertoire
+            personnel. On va donc dans le répertoire personnel en faisant : cd .. <br>
+            De cette manière on change les permissions en faisant : <strong class="text-color">chmod o+r+x &lt;nom-utilisateur&gt;</strong>. On doit se
+            retrouver avec ceci :
+        </p>
+        <img class="img-fluid" src="assets/img/chmod.png" alt="chmod">
+        <p class="texte">
+            Avec Ubuntu, on a un répertoire contenant les différents services installés.<br>
+            En se plaçant dans ce répertoire : cd /srv, on effectue la commande : <strong class="text-color">sudo ln -s &lt;chemin-de-notre-site&gt;
+            &lt;nom-du-répertoire-du-site&gt;</strong>. Cela crée un lien symbolique : on va donc changer quelques configurations
+            plus adaptées à ce lien :<br><br>
+
+            <strong class="text-color">sudo nano /etc/apache2/sites-enabled/000-default.conf</strong><br>
+            On remplace le chemin DocumentRoot par un <strong class="text-color">/srv/nom-du-répertoire-du-site</strong><br><br>
+
+            On refait : <strong class="text-color">sudo nano /etc/apache2/apache2.conf</strong><br>
+            On va supprimer ce que l’on a écrit précédemment :<br>
+            <i class="text-color2">&lt;Directory /chemin-de-notre-site/&gt;<br>
+            &nbsp;&nbsp;&nbsp;Options Indexes FollowSymLinks<br>
+            &nbsp;&nbsp;&nbsp;AllowOverride None<br>
+            &nbsp;&nbsp;&nbsp;Require all granted<br>
+                &lt;/Directory&gt;</i><br><br>
+
+            Et on active le Directory suivant : <br>
+            <i class="text-color2">&lt;Directory /srv/&gt; <br>
+            &nbsp;&nbsp;&nbsp;Options FollowSymLinks <br>
+            &nbsp;&nbsp;&nbsp;AllowOverride None <br>
+            &nbsp;&nbsp;&nbsp;Require all granted <br>
+                &lt;/Directory&gt;</i> <br><br>
+
+            <strong>A noter</strong> : Il faut supprimer le “<strong class="text-color">Indexes</strong>” qui enlève la possibilité aux personnes d’accéder au répertoire de
+            notre site et affiche un message d’erreur en conséquence. <br>
+            Comme sur cet exemple ci-dessous :
+        </p>
+        <img class="img-fluid" src="assets/img/directory2.png" alt="directories">
     </section>
-    <section id="webstorm&serveur-web" class="container-fluid">
+    <section id="webstorm&serveur-web" class="container-fluid section">
         <hr>
         <h1>WebStorm & Serveur Web</h1>
         <hr>
+        <p class="texte">Pour lier notre WebStorm à notre serveur web, il est important d’avoir installer le service
+            ssh. En allant dans <i class="text-color">tools > deployment > configuration</i>, on crée un protocole SFTP qui sert au transfert de
+            fichiers.</p>
+        <img class="img-fluid" src="assets/img/SFTP.png" alt="SFTP">
+        <p class="texte">On va créer une configuration SSH en mettant en HOST notre adresse IP et en Username notre nom
+            d’utilisateur. Il faudra veiller à tester la connexion qui devrait fonctionner si le service SSH a bien été
+            installé.
+            <br><br>
+
+            On va détecter automatiquement le root path dans la configuration du SFTP et dans l’onglet mapping, nous
+            allons rajouter le terme “<strong class="text-color">/</strong>” dans le deployment path pour spécifier que l’on veut la racine de notre root
+            path.
+        </p>
+        <img class="img-fluid" src="assets/img/mappings.png" alt="mappings">
+        <p class="texte">Cela devrait ressembler à ceci : </p>
+        <img class="img-fluid" src="assets/img/connection.png" alt="connection">
+        <p class="texte">La configuration est mise de manière par défaut si c’est le premier site que l’on déploie,
+            sinon il faut veiller à ce qu’il le soit : </p>
+        <img class="img-fluid" src="assets/img/default.png" alt="default">
+        <p class="texte">En ouvrant l’onglet remote host à droite de WebStorm (ou en faisant <i class="text-color">tools > deployment > browse
+            remote host</i>)</p>
+        <img class="img-fluid" src="assets/img/RemoteHost.png" alt="RemoteHost">
+        <p class="texte">On sélectionne le protocole SFTP que l’on a créé puis on déploie notre dossier du site : </p>
+        <img class="img-fluid" src="assets/img/deployment.png" alt="deployment">
+        <p class="texte"><strong>Précision supplémentaire</strong> : Veuillez à avoir cocher l’automatic upload en tant que <i class="text-color">Always</i> dans
+            <i class="text-color">tools > deployment > Automatic upload</i>, afin de télécharger automatiquement à chaque enregistrement.
+            <br><br>
+            Le site est désormais déployé.</p>
     </section>
 
 </main>

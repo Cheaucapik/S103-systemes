@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&display=swap');
+
 :root{
     --background-color: #3a3f44;
     --blue: #0d6efd;
     --blue-hover: #0a449f;
-    --green: #20c997;
     --hover-text: #bbbbbb;
     --text: #fff;
     --background: #212529;
+    --degradé-couleur1: rgba(121, 90, 198, 0.0455);
+    --dégradé-couleur2: #5540ff;
+    --ombre : rgba(0, 0, 0, 0.9);
+    --green: #20c997;
 }
 *{
     scroll-margin-top: 100px;
@@ -146,6 +151,77 @@ h2{
     #description{
         padding: 10px;
     }
+}
+
+/* installation */
+
+
+.installation h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 30px;
+}
+.installation h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Raleway', sans-serif;
+}
+.installation p {
+    text-align: justify;
+    font-family: 'Raleway', sans-serif;
+}
+.summary {
+    background: radial-gradient(circle at 0% 0%, var(--degradé-couleur1) 0%, var(--dégradé-couleur2) 100%);;
+    color: var(--text);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px var(--ombre);
+    max-width: 600px;
+    margin: 0 auto ;
+}
+
+.summary h2 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary ul li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.summary ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.summary p:last-child {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+.card-body > p {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var( --text);
+}
+.installation iframe {
+    border-radius: 1rem;
+    margin : 4%;
+
+}
+.card {
+    border-radius: 1rem;
 }
 
 /* dossier */

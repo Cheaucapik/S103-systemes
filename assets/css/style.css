@@ -137,10 +137,6 @@ h2{
 }
 
 .text-color{
-    color : var(--blue);
-}
-
-.text-color2{
     color : var(--green);
 }
 
